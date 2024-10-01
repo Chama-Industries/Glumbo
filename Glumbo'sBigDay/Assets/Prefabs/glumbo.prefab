@@ -523,7 +523,6 @@ GameObject:
   - component: {fileID: 6227554938417064407}
   - component: {fileID: 4096216319813895950}
   - component: {fileID: 1024672722013406854}
-  - component: {fileID: 5214158884536714875}
   - component: {fileID: 1624192660672210597}
   m_Layer: 0
   m_Name: glumbo
@@ -642,31 +641,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.19
   m_Height: 2
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &5214158884536714875
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3098233082068298462}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.12, z: 1}
-  m_Center: {x: 0, y: -1.1, z: 0}
 --- !u!114 &1624192660672210597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -885,7 +863,7 @@ Transform:
   m_GameObject: {fileID: 4930690813188218781}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.5}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

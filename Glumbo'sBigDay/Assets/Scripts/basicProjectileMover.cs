@@ -8,13 +8,13 @@ public class basicProjectileMover : MonoBehaviour
     void Start()
     {
         //how fast the projectile will move
-        speed = 15f;
+        speed = 40f;
         GetComponent<Rigidbody>().velocity = transform.forward * speed;
     }
 
     void Update()
     {
-
+        Destroy(this.gameObject, 1.0f);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -27,7 +27,7 @@ public class basicProjectileMover : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject, 4.0f);
+            Destroy(this.gameObject, 1.0f);
         }
 
     }
