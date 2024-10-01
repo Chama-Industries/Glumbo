@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using UnityEngine.SceneManagement;
-using System.Diagnostics;
-using System.Security.Cryptography;
 
 public class jaxMovementScript : MonoBehaviour
 {
     //controls the speed of the player
-    private float speed = 25;
-    private float rotateSpeed = 180;
+    private float speed = 10f;
+    private float rotateSpeed = 180f;
+    private Vector3 jumpPower = new Vector3(0, 8.75f, 0);
+    private Vector3 tempDiagonalBoost = new Vector3(0, 7.5f, 0);
+    private Vector3 tempVerticalBoost = new Vector3(0, 12.5f, 0);
     //rigidbody
     Rigidbody rb;
     //temporary variable to hold a reference to the player
     public GameObject player;
     //variable to reference a projectile for the player to use to attack
     public GameObject glumboAttack;
-    //int to give a cooldown so the attack can't be spammed
+    //int to give a cooldown so whatever action can't be spammed
     private int tempAttackCooldown;
+    private int tempJumpCooldown;
     //variable to reference where the projectile will come from
     public Transform attackOrigin;
     //3D movement variable
@@ -53,6 +54,7 @@ public class jaxMovementScript : MonoBehaviour
     void FixedUpdate()
     {
         tempAttackCooldown++;
+        tempJumpCooldown++;
         additionalPlayerActions();
     }
 
@@ -80,14 +82,15 @@ public class jaxMovementScript : MonoBehaviour
     void additionalPlayerActions()
     {
         //very temporary code to allow the player to jump
-        if(Input.GetKey(jump))
+        if(Input.GetKey(jump) && tempJumpCooldown > 75)
         {
-            player.transform.Translate(0, 0.015f, 0);
+            rb.AddForce(jumpPower, ForceMode.VelocityChange);
+            tempJumpCooldown = 0;
         }
         //temporary code to communicate that dance is working (would play an animation)
         if (Input.GetKey(dance))
         {
-            player.transform.Rotate(0.0f, 0.1f, 0.0f);
+            player.transform.Rotate(0.0f, 0.25f, 0.0f);
         }
         //another key to use
         if (Input.GetKey(secondaryInput))
@@ -106,15 +109,17 @@ public class jaxMovementScript : MonoBehaviour
     void advancedPlayerActions()
     {
         //gives the player a vertical & horizontal movement boost
-        if(Input.GetMouseButton(0) && Input.GetKey(jump))
+        if(Input.GetMouseButton(0) && Input.GetKey(jump) && tempJumpCooldown > 70)
         {
-            player.transform.Translate(0.025f, 0.025f, 0);
+            rb.AddForce(tempDiagonalBoost, ForceMode.VelocityChange);
+            tempJumpCooldown = 0;
         }
 
         //gives the player a bigger jump
-        if(Input.GetKey(jump) && Input.GetKey(dance))
+        if(Input.GetKey(jump) && Input.GetKey(dance) && tempJumpCooldown > 70)
         {
-            player.transform.Translate(0, 0.1f, 0);
+            rb.AddForce(tempVerticalBoost, ForceMode.VelocityChange);
+            tempJumpCooldown = 0;
         }
 
 
