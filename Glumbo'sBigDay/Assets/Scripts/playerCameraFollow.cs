@@ -10,16 +10,13 @@ public class playerCameraFollow : MonoBehaviour
 
     void Start()
     {
-        offset = transform.position - player.transform.position;
     }
 
     // Update is called once per frame
     void Update () {
-        transform.position = player.transform.position + new Vector3(0, 1, -5);
     }
 
     void LateUpdate()
     {
-        transform.position = player.transform.position + offset;
     }
 }

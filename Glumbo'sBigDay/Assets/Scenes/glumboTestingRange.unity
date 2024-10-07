@@ -511,11 +511,11 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.06162845, y: 0.70441604, z: -0.06162845, w: 0.70441604}
-  m_LocalPosition: {x: -10, y: 4, z: 0}
+  m_LocalPosition: {x: -10, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1744295483}
   m_LocalEulerAnglesHint: {x: 10, y: 90, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -595,6 +595,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1624192660672210597, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
+      propertyPath: attackOrigin
+      value: 
+      objectReference: {fileID: 1744295483}
+    - target: {fileID: 1624192660672210597, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
+      propertyPath: glumboOrbitingAttack
+      value: 
+      objectReference: {fileID: 8228090866164401996, guid: 83819c752914cce4481c782578b13db7, type: 3}
     - target: {fileID: 3098233082068298462, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
       propertyPath: m_Name
       value: glumbo
@@ -657,9 +665,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8881607749844647677, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 963194228}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3098233082068298462, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1744295489}
   m_SourcePrefab: {fileID: 100100000, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
+--- !u!4 &1744295483 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8881607749844647677, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
+  m_PrefabInstance: {fileID: 1744295482}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1744295489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218159038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9fbe4b8c4f6dbd48b2a0b0f54ed4f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orbitCenter: {fileID: 1744295483}
+  orbitSpeed: 50
+  orbitRadius: 5
+  lifetime: 10
 --- !u!1001 &1842443806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -722,7 +757,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 705507995}
-  - {fileID: 963194228}
   - {fileID: 881859633}
   - {fileID: 1744295482}
   - {fileID: 305812805}
