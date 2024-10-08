@@ -26,9 +26,15 @@ public class jaxMovementScript : MonoBehaviour
     //3D movement variable
     Vector3 movementD;
     //assignments for additional inputs, holds the keys we're using to give the player control
-    private string jump;
-    private string dance;
-    private string secondaryInput;
+    public KeyCode jump = KeyCode.Space;
+    public KeyCode dance = KeyCode.Q;
+    //public KeyCode secondaryKey = KeyCode.E;
+    [Header("Projectile Orbit Settings")]
+    [Tooltip("Maximum number of orbiting projectiles allowed.")]
+    public int maxOrbitProjectiles = 1;
+
+    // List to keep track of active orbiting projectiles
+    private List<GameObject> activeOrbitProjectiles = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -38,9 +44,6 @@ public class jaxMovementScript : MonoBehaviour
         //staple grab of a physics simulation component
         rb = GetComponent<Rigidbody>();
         //relvenant keys that do things when pressed
-        jump = "space";
-        dance = "q";
-        secondaryInput = "e";
     }
 
     // Update is called once per frame
@@ -93,10 +96,10 @@ public class jaxMovementScript : MonoBehaviour
             player.transform.Rotate(0.0f, 0.25f, 0.0f);
         }
         //another key to use
-        if (Input.GetKey(secondaryInput))
+        /*if (Input.GetKey(secondaryInput))
         {
             
-        }
+        }*/
         //attacking input
         if(Input.GetMouseButton(0) && tempAttackCooldown > 50)
         {
@@ -122,6 +125,58 @@ public class jaxMovementScript : MonoBehaviour
             tempJumpCooldown = 0;
         }
 
+        //attacking input for orbit attack
+        if(Input.GetKey(dance) && Input.GetMouseButton(0) && tempAttackCooldown > 50)
+        {
+            if (activeOrbitProjectiles.Count < maxOrbitProjectiles){
+                SpawnOrbitProjectile();
+                tempAttackCooldown = 0;
+            }
+        }
+    }
 
+    void SpawnOrbitProjectile()
+    {
+        if (glumboAttack == null)
+        {
+            Debug.LogWarning("jaxMovementScript: glumboAttack prefab not assigned.");
+            return;
+        }
+
+        if (attackOrigin == null)
+        {
+            Debug.LogWarning("jaxMovementScript: Attack Origin Transform not assigned.");
+            return;
+        }
+
+        if (player == null)
+        {
+            Debug.LogWarning("jaxMovementScript: Player GameObject not assigned.");
+            return;
+        }
+
+        //Quaternion.identity
+        // Instantiate the orbiting projectile at the attackOrigin position
+        GameObject projectile = Instantiate(glumboAttack, attackOrigin.position, attackOrigin.rotation);
+
+        // Get the orbitingProjectileMovement component
+        orbitingProjectileMovement orbitScript = projectile.GetComponent<orbitingProjectileMovement>();
+        if (orbitScript != null)
+        {
+            // Assign the orbit center to the player's Transform
+            orbitScript.orbitCenter = player.transform;
+
+            // Optionally, set other parameters like speed and radius if exposed
+            // orbitScript.orbitSpeed = 50f;
+            // orbitScript.orbitRadius = 5f;
+
+            // Add to the active projectiles list
+            activeOrbitProjectiles.Add(projectile);
+        }
+        else
+        {
+            Debug.LogError("jaxMovementScript: glumboAttack prefab does not have an orbitingProjectileMovement component.");
+            Destroy(projectile);
+        }
     }
 }

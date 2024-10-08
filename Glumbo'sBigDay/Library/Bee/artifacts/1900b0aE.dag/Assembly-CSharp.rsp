@@ -391,6 +391,7 @@
 "Assets/Scripts/basicEnemyBehavior.cs"
 "Assets/Scripts/basicProjectileMover.cs"
 "Assets/Scripts/jaxMovementScript.cs"
+"Assets/Scripts/orbitingProjectileMovement.cs"
 "Assets/Scripts/playerCameraFollow.cs"
 "Assets/Scripts/PlayerMovement.cs"
 -langversion:9.0

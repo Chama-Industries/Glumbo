@@ -16,5 +16,7 @@ public class playerCameraFollow : MonoBehaviour
     void LateUpdate()
     {
         transform.position = player.transform.position + offset;
+        transform.rotation = player.transform.rotation;
+        transform.LookAt(player.transform.position);
     }
 }

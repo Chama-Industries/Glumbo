@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &218159038 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3098233082068298462, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
-  m_PrefabInstance: {fileID: 1744295482}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &305812805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -529,7 +524,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d97b5b0772e0c4a82cbd4f9a599cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 218159038}
+  player: {fileID: 1008343260}
+--- !u!1 &1008343260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3098233082068298462, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
+  m_PrefabInstance: {fileID: 1744169693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1332344520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -587,7 +587,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c082f200cd7d9e45ad96a2a67528fde, type: 3}
---- !u!1001 &1744295482
+--- !u!1001 &1744169693
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -599,29 +599,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: glumbo
       objectReference: {fileID: 0}
-    - target: {fileID: 4096216319813895950, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 6227554938417064407, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6227554938417064407, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
-      propertyPath: playerCamera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6434914685174722331, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8881607749844647677, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8881607749844647677, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8881607749844647677, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -722,9 +706,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 705507995}
-  - {fileID: 963194228}
   - {fileID: 881859633}
-  - {fileID: 1744295482}
+  - {fileID: 963194228}
+  - {fileID: 1744169693}
   - {fileID: 305812805}
   - {fileID: 751813594}
   - {fileID: 1842443806}
