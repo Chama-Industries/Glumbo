@@ -93,7 +93,7 @@ public class jaxMovementScript : MonoBehaviour
         //temporary code to communicate that dance is working (would play an animation)
         if (Input.GetKey(dance))
         {
-            player.transform.Rotate(0.0f, 0.25f, 0.0f);
+            player.transform.Rotate(0.0f, 1.25f, 0.0f);
         }
         //another key to use
         /*if (Input.GetKey(secondaryInput))
