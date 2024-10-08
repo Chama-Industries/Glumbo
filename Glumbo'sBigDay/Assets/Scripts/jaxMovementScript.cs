@@ -18,8 +18,6 @@ public class jaxMovementScript : MonoBehaviour
     public GameObject player;
     //variable to reference a projectile for the player to use to attack
     public GameObject glumboAttack;
-    //variable to reference an orbiting projectile around player
-    public GameObject glumboOrbitingAttack;
     //int to give a cooldown so whatever action can't be spammed
     private int tempAttackCooldown;
     private int tempJumpCooldown;
@@ -131,16 +129,17 @@ public class jaxMovementScript : MonoBehaviour
         if(Input.GetKey(dance) && Input.GetMouseButton(0) && tempAttackCooldown > 50)
         {
             if (activeOrbitProjectiles.Count < maxOrbitProjectiles){
-                Instantiate(glumboOrbitingAttack, attackOrigin.position, attackOrigin.rotation);
+                SpawnOrbitProjectile();
                 tempAttackCooldown = 0;
             }
         }
     }
+
     void SpawnOrbitProjectile()
     {
-        if (glumboOrbitingAttack == null)
+        if (glumboAttack == null)
         {
-            Debug.LogWarning("jaxMovementScript: glumboOrbitingAttack prefab not assigned.");
+            Debug.LogWarning("jaxMovementScript: glumboAttack prefab not assigned.");
             return;
         }
 
@@ -155,10 +154,10 @@ public class jaxMovementScript : MonoBehaviour
             Debug.LogWarning("jaxMovementScript: Player GameObject not assigned.");
             return;
         }
-    
 
+        //Quaternion.identity
         // Instantiate the orbiting projectile at the attackOrigin position
-        GameObject projectile = Instantiate(glumboOrbitingAttack, attackOrigin.position, Quaternion.identity);
+        GameObject projectile = Instantiate(glumboAttack, attackOrigin.position, attackOrigin.rotation);
 
         // Get the orbitingProjectileMovement component
         orbitingProjectileMovement orbitScript = projectile.GetComponent<orbitingProjectileMovement>();
@@ -176,7 +175,7 @@ public class jaxMovementScript : MonoBehaviour
         }
         else
         {
-            Debug.LogError("jaxMovementScript: glumboOrbitingAttack prefab does not have an orbitingProjectileMovement component.");
+            Debug.LogError("jaxMovementScript: glumboAttack prefab does not have an orbitingProjectileMovement component.");
             Destroy(projectile);
         }
     }

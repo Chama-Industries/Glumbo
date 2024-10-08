@@ -7,6 +7,7 @@ public class orbitingProjectileMovement : MonoBehaviour
     [Header("Orbit Settings")]
     [Tooltip("The center point to orbit around, typically the player.")]
     public Transform orbitCenter;
+    public GameObject temp;
 
     [Tooltip("Speed at which the projectile orbits around the center (degrees per second).")]
     public float orbitSpeed = 50f;
@@ -22,6 +23,9 @@ public class orbitingProjectileMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //getting the Glumbo in the scene to that way the origin follows it
+        temp = GameObject.Find("/glumbo/glumboBody/attackOrigin");
+        orbitCenter = temp.transform;
         if (orbitCenter == null)
         {
             Debug.LogError("orbitingProjectileMovement: Orbit Center not assigned.");

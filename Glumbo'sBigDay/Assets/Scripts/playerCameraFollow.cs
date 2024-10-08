@@ -10,13 +10,13 @@ public class playerCameraFollow : MonoBehaviour
 
     void Start()
     {
-    }
-
-    // Update is called once per frame
-    void Update () {
+        offset = transform.position - player.transform.position;
     }
 
     void LateUpdate()
     {
+        transform.position = player.transform.position + offset;
+        transform.rotation = player.transform.rotation;
+        transform.LookAt(player.transform.position);
     }
 }

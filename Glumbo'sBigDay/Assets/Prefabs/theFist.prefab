@@ -1517,6 +1517,7 @@ GameObject:
   - component: {fileID: 6887596329586367251}
   - component: {fileID: 5493562581413702745}
   - component: {fileID: 3573786408627386382}
+  - component: {fileID: 6479301202512196463}
   m_Layer: 0
   m_Name: theFist
   m_TagString: Untagged
@@ -1585,6 +1586,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &6479301202512196463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8228090866164401996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9fbe4b8c4f6dbd48b2a0b0f54ed4f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orbitCenter: {fileID: 8881607749844647677, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
+  orbitSpeed: 50
+  orbitRadius: 5
+  lifetime: 10
 --- !u!1 &8810170155426249873
 GameObject:
   m_ObjectHideFlags: 0
