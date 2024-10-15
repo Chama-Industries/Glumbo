@@ -2886,9 +2886,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1624192660672210597, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3098233082068298462, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
       propertyPath: m_Name
       value: glumbo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6227554938417064407, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434914685174722331, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8881607749844647677, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
       propertyPath: m_LocalPosition.x
