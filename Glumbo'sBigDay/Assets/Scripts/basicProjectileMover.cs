@@ -2,33 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class basicProjectileMover : MonoBehaviour
+public class BasicProjectileMover : MonoBehaviour
 {
-    private float speed;
+    public RigidbodyExtensions projectile; // Assign via Inspector or dynamically
+    private float speed = 40f;
+
     void Start()
     {
-        //how fast the projectile will move
-        speed = 40f;
-        GetComponent<Rigidbody>().velocity = transform.forward * speed;
+        if (projectile == null)
+        {
+            // Attempt to find the RigidbodyExtensions component on the same GameObject
+            projectile = GetComponent<RigidbodyExtensions>();
+            if (projectile == null)
+            {
+                Debug.LogError("RigidbodyExtensions component not found on this GameObject.");
+            }
+        }
+
+        // Configure projectile properties if needed
+        projectile.MaxDistance = 30f;
+        projectile.LaunchForce = speed;
     }
 
     void Update()
     {
-        Destroy(this.gameObject, 1.0f);
+        // Example: Launch the projectile when the left mouse button is clicked
+        if (Input.GetMouseButtonDown(0) && projectile != null && !projectile.IsLaunched)
+        {
+            Vector3 launchDirection = transform.forward; // Launch in the forward direction
+            projectile.Launch(launchDirection, projectile.LaunchForce);
+        }
+
+        // Destroy the projectile after 1 second if it hasn't returned yet
+        // Note: This is already handled in RigidbodyExtensions via DestroyAfterTime()
+        // So, this line can be removed unless additional conditions are needed
+        // Destroy(this.gameObject, 1.0f);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        //check to see if we collide with something that needs a reaction, if not it just destroys itself so you can't spam projectiles and have them linger in the world
-        if (collision.gameObject.tag == "enemy")
-        {
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject, 1.0f);
-        }
-
+        // Collision handling is managed in RigidbodyExtensions
+        // If additional collision logic is needed, implement here
     }
+
+    // Intended to return projectile - handled in RigidbodyExtensions
+    // Removed reverseProjectile method as it's not functional and managed in RigidbodyExtensions
 }
