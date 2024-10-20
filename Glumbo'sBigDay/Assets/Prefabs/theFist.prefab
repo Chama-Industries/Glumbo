@@ -1515,9 +1515,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6887596329586367251}
-  - component: {fileID: 5493562581413702745}
   - component: {fileID: 3573786408627386382}
-  - component: {fileID: 6479301202512196463}
+  - component: {fileID: 3328759828491898476}
   m_Layer: 0
   m_Name: theFist
   m_TagString: Untagged
@@ -1533,7 +1532,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8228090866164401996}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1546,19 +1545,7 @@ Transform:
   - {fileID: 6925022859060785584}
   - {fileID: 5152682327447343214}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &5493562581413702745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8228090866164401996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cf02fbc5f74e07409456cbb0e79e9ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &3573786408627386382
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1586,7 +1573,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &6479301202512196463
+--- !u!114 &3328759828491898476
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1595,13 +1582,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8228090866164401996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9fbe4b8c4f6dbd48b2a0b0f54ed4f7e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d731d5d1f4f84e4081cd2be29b2786e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbitCenter: {fileID: 8881607749844647677, guid: fb557bee45e608847b555ae08bf1c7ae, type: 3}
-  orbitSpeed: 50
-  orbitRadius: 5
-  lifetime: 10
 --- !u!1 &8810170155426249873
 GameObject:
   m_ObjectHideFlags: 0

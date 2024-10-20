@@ -159,23 +159,18 @@ public class jaxMovementScript : MonoBehaviour
         // Instantiate the orbiting projectile at the attackOrigin position
         GameObject projectile = Instantiate(glumboAttack, attackOrigin.position, attackOrigin.rotation);
 
-        // Get the orbitingProjectileMovement component
-        orbitingProjectileMovement orbitScript = projectile.GetComponent<orbitingProjectileMovement>();
+        // Get the script attached to the projectile
+        playerAttack orbitScript = projectile.GetComponent<playerAttack>();
         if (orbitScript != null)
         {
-            // Assign the orbit center to the player's Transform
-            orbitScript.orbitCenter = player.transform;
-
-            // Optionally, set other parameters like speed and radius if exposed
-            // orbitScript.orbitSpeed = 50f;
-            // orbitScript.orbitRadius = 5f;
-
+            //method call to have the projectile rotate (broken)
+            orbitScript.orbitPlayer();
             // Add to the active projectiles list
             activeOrbitProjectiles.Add(projectile);
         }
         else
         {
-            Debug.LogError("jaxMovementScript: glumboAttack prefab does not have an orbitingProjectileMovement component.");
+            Debug.LogError("jaxMovementScript: glumboAttack prefab does not have a playerAttack component.");
             Destroy(projectile);
         }
     }
