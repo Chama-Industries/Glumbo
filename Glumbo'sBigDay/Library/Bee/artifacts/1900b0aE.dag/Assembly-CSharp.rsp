@@ -389,12 +389,15 @@
 -analyzer:"C:/Program Files/Unity 2023.2.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"C:/Program Files/Unity 2023.2.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/Scripts/basicEnemyBehavior.cs"
-"Assets/Scripts/basicProjectileMover.cs"
 "Assets/Scripts/jaxMovementScript.cs"
 "Assets/Scripts/orbitingProjectileMovement.cs"
+"Assets/Scripts/playerAttack.cs"
 "Assets/Scripts/playerCameraFollow.cs"
+<<<<<<< HEAD
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/RigidbodyExtensions.cs"
+=======
+>>>>>>> 25cbc4a9f5ae37a60bca63b27d9165e1fa88e2a6
 -langversion:9.0
 
 /deterministic

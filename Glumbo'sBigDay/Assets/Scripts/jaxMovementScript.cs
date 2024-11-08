@@ -214,23 +214,19 @@ public class jaxMovementScript : MonoBehaviour
         // Instantiate the orbiting projectile at the attackOrigin position
         RigidbodyExtensions newProjectile = Instantiate(glumboAttackPrefab, attackOrigin.position, attackOrigin.rotation);
 
-        if (newProjectile != null)
+        // Get the script attached to the projectile
+        playerAttack orbitScript = projectile.GetComponent<playerAttack>();
+        if (orbitScript != null)
         {
-            // Assign the player as the target for the projectile
-            newProjectile.LaunchForce = speed;
-            newProjectile.MaxDistance = 30f;
-            newProjectile.ReturnSpeed = 15f;
-
-            // Launch the projectile forward
-            Vector3 launchDirection = transform.forward;
-            newProjectile.Launch(launchDirection, newProjectile.LaunchForce);
-
+            //method call to have the projectile rotate (broken)
+            orbitScript.orbitPlayer();
             // Add to the active projectiles list
             activeOrbitProjectiles.Add(newProjectile);
         }
         else
         {
-            Debug.LogError("jaxMovementScript: Failed to instantiate glumboAttackPrefab.");
+            Debug.LogError("jaxMovementScript: glumboAttack prefab does not have a playerAttack component.");
+            Destroy(projectile);
         }
     }
 }
