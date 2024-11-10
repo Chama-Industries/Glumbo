@@ -40080,13 +40080,8 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp",
       "DisplayName": "Writing Assembly-CSharp.rsp",
       "ActionType": "WriteFile",
-<<<<<<< HEAD
       "PayloadOffset": 1688550,
-      "PayloadLength": 34263,
-=======
-      "PayloadOffset": 1767279,
-      "PayloadLength": 36763,
->>>>>>> 25cbc4a9f5ae37a60bca63b27d9165e1fa88e2a6
+      "PayloadLength": 34270,
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "InputFlags": [],
@@ -40102,11 +40097,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp2",
       "DisplayName": "Writing Assembly-CSharp.rsp2",
       "ActionType": "WriteFile",
-<<<<<<< HEAD
-      "PayloadOffset": 1722900,
-=======
-      "PayloadOffset": 1804129,
->>>>>>> 25cbc4a9f5ae37a60bca63b27d9165e1fa88e2a6
+      "PayloadOffset": 1722907,
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -40385,22 +40376,17 @@
         "Library/Bee/artifacts/1900b0aE.dag/Unity.VisualStudio.Editor.ref.dll",
         "Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll",
         "Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll",
+        "Assets/Score.cs",
         "Assets/Scripts/basicEnemyBehavior.cs",
         "Assets/Scripts/jaxMovementScript.cs",
         "Assets/Scripts/orbitingProjectileMovement.cs",
         "Assets/Scripts/playerAttack.cs",
         "Assets/Scripts/playerCameraFollow.cs",
-<<<<<<< HEAD
-        "Assets/Scripts/PlayerMovement.cs",
         "Assets/Scripts/RigidbodyExtensions.cs",
+        "Assets/Scripts/ScoreBoard.cs",
         "C:/Program Files/Unity 2023.2.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll",
         "C:/Program Files/Unity 2023.2.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll",
         "C:/Program Files/Unity 2023.2.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll",
-=======
-        "C:/Program Files/Unity/Hub/Editor/2023.2.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll",
-        "C:/Program Files/Unity/Hub/Editor/2023.2.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll",
-        "C:/Program Files/Unity/Hub/Editor/2023.2.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll",
->>>>>>> 25cbc4a9f5ae37a60bca63b27d9165e1fa88e2a6
         "Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp"
       ],
       "InputFlags": [
@@ -40673,11 +40659,9 @@
         0,
         0,
         0,
-<<<<<<< HEAD
         0,
         0,
-=======
->>>>>>> 25cbc4a9f5ae37a60bca63b27d9165e1fa88e2a6
+        0,
         8
       ],
       "Outputs": [
@@ -40989,11 +40973,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-<<<<<<< HEAD
-      "PayloadOffset": 1722996,
-=======
-      "PayloadOffset": 1804225,
->>>>>>> 25cbc4a9f5ae37a60bca63b27d9165e1fa88e2a6
+      "PayloadOffset": 1723003,
       "PayloadLength": 11981,
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],

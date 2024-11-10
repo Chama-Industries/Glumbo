@@ -215,7 +215,7 @@ public class jaxMovementScript : MonoBehaviour
         RigidbodyExtensions newProjectile = Instantiate(glumboAttackPrefab, attackOrigin.position, attackOrigin.rotation);
 
         // Get the script attached to the projectile
-        playerAttack orbitScript = projectile.GetComponent<playerAttack>();
+        playerAttack orbitScript = newProjectile.GetComponent<playerAttack>();
         if (orbitScript != null)
         {
             //method call to have the projectile rotate (broken)
@@ -226,7 +226,7 @@ public class jaxMovementScript : MonoBehaviour
         else
         {
             Debug.LogError("jaxMovementScript: glumboAttack prefab does not have a playerAttack component.");
-            Destroy(projectile);
+            Destroy(newProjectile);
         }
     }
 }
