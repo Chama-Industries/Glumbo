@@ -13,6 +13,6 @@ public class ScoreBoard : MonoBehaviour
             score++;
         }
         */
-        Debug.Log(score);
+        //Debug.Log(score);
     }
 }

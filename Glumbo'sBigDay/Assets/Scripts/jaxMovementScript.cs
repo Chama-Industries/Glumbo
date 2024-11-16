@@ -7,9 +7,10 @@ public class jaxMovementScript : MonoBehaviour
     // Controls the speed of the player
     private float speed = 10f;
     private float rotateSpeed = 180f;
-    private Vector3 jumpPower = new Vector3(0, 8.75f, 0);
+    private Vector3 jumpPower = new Vector3(0, 10.0f, 0);
+    private Vector3 fallingPower = new Vector3(0, -0.4f, 0);
     private Vector3 tempDiagonalBoost = new Vector3(0, 7.5f, 0);
-    private Vector3 tempVerticalBoost = new Vector3(0, 12.5f, 0);
+    private Vector3 tempVerticalBoost = new Vector3(0, 15.0f, 0);
 
     // Rigidbody
     private Rigidbody rb;
@@ -33,6 +34,7 @@ public class jaxMovementScript : MonoBehaviour
     // Controls
     public KeyCode jump = KeyCode.Space;
     public KeyCode dance = KeyCode.Q;
+    public KeyCode secondaryKey = KeyCode.E;
 
     [Header("Projectile Orbit Settings")]
     [Tooltip("Maximum number of orbiting projectiles allowed.")]
@@ -107,7 +109,7 @@ public class jaxMovementScript : MonoBehaviour
     void additionalPlayerActions()
     {
         // Jump
-        if (Input.GetKey(jump) && tempJumpCooldown > 75)
+        if (Input.GetKey(jump) && tempJumpCooldown > 50)
         {
             rb.AddForce(jumpPower, ForceMode.VelocityChange);
             tempJumpCooldown = 0;
@@ -118,6 +120,12 @@ public class jaxMovementScript : MonoBehaviour
         {
             player.transform.Rotate(0.0f, 1.25f, 0.0f);
         }
+
+        // Fast Falling
+        if (Input.GetKey(secondaryKey))
+        {
+            rb.AddForce(fallingPower, ForceMode.VelocityChange);
+        } 
 
         // Attack
         if (Input.GetMouseButton(0) && tempAttackCooldown > 50)
@@ -131,14 +139,14 @@ public class jaxMovementScript : MonoBehaviour
     void advancedPlayerActions()
     {
         // Diagonal Boost
-        if (Input.GetMouseButton(0) && Input.GetKey(jump) && tempJumpCooldown > 70)
+        if (Input.GetMouseButton(0) && Input.GetKey(jump) && tempJumpCooldown > 50)
         {
             rb.AddForce(tempDiagonalBoost, ForceMode.VelocityChange);
             tempJumpCooldown = 0;
         }
 
         // Bigger Jump
-        if (Input.GetKey(jump) && Input.GetKey(dance) && tempJumpCooldown > 70)
+        if (Input.GetKey(jump) && Input.GetKey(dance) && tempJumpCooldown > 50)
         {
             rb.AddForce(tempVerticalBoost, ForceMode.VelocityChange);
             tempJumpCooldown = 0;
