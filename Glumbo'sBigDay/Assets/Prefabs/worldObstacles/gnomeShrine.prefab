@@ -46,6 +46,8 @@ GameObject:
   - component: {fileID: 6557070332884842342}
   - component: {fileID: 8227500640814162579}
   - component: {fileID: 8970492324158750355}
+  - component: {fileID: 4813342639228179676}
+  - component: {fileID: 2432374730766835133}
   m_Layer: 0
   m_Name: gnomeCube
   m_TagString: Untagged
@@ -63,7 +65,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3969393666710303542}
@@ -141,6 +143,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4813342639228179676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6108885433467724274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c25b29b320fef498b3a8059935961c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  ForwardX: 1
+  ForwardY: 1
+  ForwardZ: 1
+  ReverseX: 0
+  ReverseY: 0
+  ReverseZ: 0
+--- !u!114 &2432374730766835133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6108885433467724274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6125bc2be1cb9fa499bde72766cb8416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemScoreValue: 1000
 --- !u!1001 &6718713510210027326
 PrefabInstance:
   m_ObjectHideFlags: 0

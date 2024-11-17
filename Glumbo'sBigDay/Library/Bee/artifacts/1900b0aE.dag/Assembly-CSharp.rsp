@@ -390,12 +390,14 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2023.2.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/Scripts/baselineScore.cs"
 "Assets/Scripts/basicEnemyBehavior.cs"
+"Assets/Scripts/collectilbe.cs"
 "Assets/Scripts/enemyProjectileBehavior.cs"
 "Assets/Scripts/jaxMovementScript.cs"
-"Assets/Scripts/orbitingProjectileMovement.cs"
 "Assets/Scripts/playerAttack.cs"
 "Assets/Scripts/playerCameraFollow.cs"
-"Assets/Scripts/RigidbodyExtensions.cs"
+"Assets/Scripts/rotateObject.cs"
+"Assets/Scripts/unused/orbitingProjectileMovement.cs"
+"Assets/Scripts/unused/RigidbodyExtensions.cs"
 -langversion:9.0
 
 /deterministic
