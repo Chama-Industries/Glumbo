@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class jaxMovementScript : MonoBehaviour
@@ -18,8 +19,8 @@ public class jaxMovementScript : MonoBehaviour
     // Reference to the player (if this script is on the player, can be removed)
     public GameObject player;
 
-    // Projectile prefab (RigidbodyExtensions component)
-    public RigidbodyExtensions glumboAttackPrefab;
+    // Projectile prefab (GameObject component)
+    public GameObject glumboAttack;
 
     // Cooldowns
     private int tempAttackCooldown;
@@ -36,12 +37,6 @@ public class jaxMovementScript : MonoBehaviour
     public KeyCode dance = KeyCode.Q;
     public KeyCode secondaryKey = KeyCode.E;
 
-    [Header("Projectile Orbit Settings")]
-    [Tooltip("Maximum number of orbiting projectiles allowed.")]
-    public int maxOrbitProjectiles = 1;
-
-    // List to keep track of active orbiting projectiles
-    private List<RigidbodyExtensions> activeOrbitProjectiles = new List<RigidbodyExtensions>();
 
     // Start is called before the first frame update
     void Start()
@@ -57,16 +52,21 @@ public class jaxMovementScript : MonoBehaviour
             player = this.gameObject; // If this script is on the player
         }
 
-        // Ensure glumboAttackPrefab is assigned
-        if (glumboAttackPrefab == null)
+        // Ensure glumboAttack is assigned
+        if (glumboAttack == null)
         {
-            Debug.LogError("jaxMovementScript: glumboAttackPrefab not assigned in the Inspector.");
+            UnityEngine.Debug.LogError("jaxMovementScript: glumboAttack not assigned in the Inspector.");
         }
 
         // Ensure attackOrigin is assigned
         if (attackOrigin == null)
         {
-            Debug.LogError("jaxMovementScript: Attack Origin Transform not assigned in the Inspector.");
+            UnityEngine.Debug.LogError("jaxMovementScript: Attack Origin Transform not assigned in the Inspector.");
+        }
+
+        if (player == null)
+        {
+            UnityEngine.Debug.LogWarning("jaxMovementScript: Player GameObject not assigned.");
         }
     }
 
@@ -130,7 +130,7 @@ public class jaxMovementScript : MonoBehaviour
         // Attack
         if (Input.GetMouseButton(0) && tempAttackCooldown > 50)
         {
-            LaunchProjectile();
+            Instantiate(glumboAttack, attackOrigin.position, attackOrigin.rotation);
             tempAttackCooldown = 0;
         }
     }
@@ -155,85 +155,29 @@ public class jaxMovementScript : MonoBehaviour
         // Orbit Attack
         if (Input.GetKey(dance) && Input.GetMouseButton(0) && tempAttackCooldown > 50)
         {
-            if (activeOrbitProjectiles.Count < maxOrbitProjectiles)
-            {
-                SpawnOrbitProjectile();
-                tempAttackCooldown = 0;
-            }
+            SpawnOrbitProjectile();
+            tempAttackCooldown = 0;
         }
     }
 
-    // Launches a single projectile
-    void LaunchProjectile()
-    {
-        if (glumboAttackPrefab == null)
-        {
-            Debug.LogWarning("jaxMovementScript: glumboAttackPrefab not assigned.");
-            return;
-        }
-
-        if (attackOrigin == null)
-        {
-            Debug.LogWarning("jaxMovementScript: Attack Origin Transform not assigned.");
-            return;
-        }
-
-        // Instantiate the projectile
-        RigidbodyExtensions newProjectile = Instantiate(glumboAttackPrefab, attackOrigin.position, attackOrigin.rotation);
-
-        if (newProjectile != null)
-        {
-            // Assign the player as the target for the projectile
-            newProjectile.LaunchForce = speed;
-            newProjectile.MaxDistance = 30f;
-            newProjectile.ReturnSpeed = 15f;
-
-            // Launch the projectile forward
-            Vector3 launchDirection = transform.forward;
-            newProjectile.Launch(launchDirection, newProjectile.LaunchForce);
-        }
-        else
-        {
-            Debug.LogError("jaxMovementScript: Failed to instantiate glumboAttackPrefab.");
-        }
-    }
+    
 
     // Spawns an orbiting projectile
     void SpawnOrbitProjectile()
     {
-        if (glumboAttackPrefab == null)
-        {
-            Debug.LogWarning("jaxMovementScript: glumboAttackPrefab not assigned.");
-            return;
-        }
-
-        if (attackOrigin == null)
-        {
-            Debug.LogWarning("jaxMovementScript: Attack Origin Transform not assigned.");
-            return;
-        }
-
-        if (player == null)
-        {
-            Debug.LogWarning("jaxMovementScript: Player GameObject not assigned.");
-            return;
-        }
-
         // Instantiate the orbiting projectile at the attackOrigin position
-        RigidbodyExtensions newProjectile = Instantiate(glumboAttackPrefab, attackOrigin.position, attackOrigin.rotation);
+        GameObject newProjectile = Instantiate(glumboAttack, attackOrigin.position, attackOrigin.rotation);
 
         // Get the script attached to the projectile
         playerAttack orbitScript = newProjectile.GetComponent<playerAttack>();
         if (orbitScript != null)
         {
             //method call to have the projectile rotate (broken)
-            orbitScript.orbitPlayer();
-            // Add to the active projectiles list
-            activeOrbitProjectiles.Add(newProjectile);
+            orbitScript.activateOrbit();
         }
         else
         {
-            Debug.LogError("jaxMovementScript: glumboAttack prefab does not have a playerAttack component.");
+            UnityEngine.Debug.LogError("jaxMovementScript: glumboAttack prefab does not have a playerAttack component.");
             Destroy(newProjectile);
         }
     }
