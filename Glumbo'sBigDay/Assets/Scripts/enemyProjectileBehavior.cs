@@ -5,6 +5,8 @@ using UnityEngine;
 public class enemyProjectileBehavior : MonoBehaviour
 {
     private float speed;
+    private baselineScore playerScore = new baselineScore();
+    private bool scoreControl = true;
     void Start()
     {
         speed = 15f;
@@ -16,16 +18,21 @@ public class enemyProjectileBehavior : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "player")
         {
+            if (scoreControl)
+            {
+                playerScore.addScore(-100);
+                scoreControl = false;
+            }
             Destroy(this.gameObject);
         }
         else
         {
             Destroy(this.gameObject, 3.0f);
         }
-
+        scoreControl = true;
     }
 }

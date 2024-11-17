@@ -10,6 +10,7 @@ public class playerAttack : MonoBehaviour
     // booleans to dictate projectile behavior, can be changed using Method Calls 
     private bool stopAttack = false;
     private bool doesOrbit = false;
+    private bool scoreControl = true;
 
     // Variables used to calcuate the distance between the Player and the Projectile
     private Vector3 initialPosition;
@@ -53,11 +54,19 @@ public class playerAttack : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
+        if (collision.gameObject.tag == "enemyAttack")
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
         //check to see if we collide with something that needs a reaction, if not it just destroys itself so you can't spam projectiles and have them linger in the world
         if (collision.gameObject.tag == "enemy")
         {
-            playerScore.addScore(100);
+            if(scoreControl)
+            {
+                playerScore.addScore(100);
+                scoreControl = false;
+            }
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
@@ -65,7 +74,6 @@ public class playerAttack : MonoBehaviour
         {
             Destroy(this.gameObject, 0.1f);
         }
-
     }
 
     //this makes the projectile return to the player (unused currently, but thats what it does)
@@ -85,6 +93,7 @@ public class playerAttack : MonoBehaviour
         differenceBetweenPositions = Vector3.Distance(transform.position, initialPosition);
         if (differenceBetweenPositions > 5 && !doesOrbit)
         {
+            scoreControl = true;
             stopAttack = !stopAttack;
             //stops the projectile from moving
             rb.velocity = transform.forward * 0;

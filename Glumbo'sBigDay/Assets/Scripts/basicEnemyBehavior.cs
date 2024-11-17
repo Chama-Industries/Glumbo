@@ -26,7 +26,7 @@ public class Enemyscript : MonoBehaviour
         distanceFromPlayer = Vector3.Distance(transform.position, player.transform.position);
         if (distanceFromPlayer < 25.0f)
         {
-            if (distanceFromPlayer < 10.0f && wait >= 100 && !hasFired)
+            if (distanceFromPlayer < 10.0f && !hasFired)
             {
                 shoot();
             }
@@ -36,7 +36,7 @@ public class Enemyscript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (wait == 100 && hasFired)
+        if (wait == 400)
         {
             wait = 0;
             hasFired = false;

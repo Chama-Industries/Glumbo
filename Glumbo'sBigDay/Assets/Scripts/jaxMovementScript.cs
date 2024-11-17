@@ -83,6 +83,7 @@ public class jaxMovementScript : MonoBehaviour
     {
         playerMove();
         advancedPlayerActions();
+        updateScore();
     }
 
     // FixedUpdate is called at fixed intervals
