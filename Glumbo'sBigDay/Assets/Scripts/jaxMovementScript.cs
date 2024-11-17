@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using TMPro;
 
 public class jaxMovementScript : MonoBehaviour
 {
@@ -37,6 +38,11 @@ public class jaxMovementScript : MonoBehaviour
     public KeyCode dance = KeyCode.Q;
     public KeyCode secondaryKey = KeyCode.E;
 
+    // Variables to Control & Display the Player's Score
+    public TextMeshProUGUI theScore;
+    private baselineScore playerScore = new baselineScore();
+    private int scoreCheck;
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +51,8 @@ public class jaxMovementScript : MonoBehaviour
         speed = 25f;
         // Get Rigidbody component
         rb = GetComponent<Rigidbody>();
+        // assignment allowing us to see if the Displayed Score matched the internal score
+        scoreCheck = playerScore.getScore();
 
         // Ensure player reference is set
         if (player == null)
@@ -160,8 +168,6 @@ public class jaxMovementScript : MonoBehaviour
         }
     }
 
-    
-
     // Spawns an orbiting projectile
     void SpawnOrbitProjectile()
     {
@@ -181,4 +187,13 @@ public class jaxMovementScript : MonoBehaviour
             Destroy(newProjectile);
         }
     }
+
+    void updateScore()
+    {
+        if (scoreCheck != playerScore.getScore())
+        {
+            theScore.text = "Score: " + playerScore.getScore() + "";
+        }
+    }
 }
+

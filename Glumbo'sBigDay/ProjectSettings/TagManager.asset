@@ -6,6 +6,7 @@ TagManager:
   tags:
   - attackOriginTag
   - player
+  - enemy
   layers:
   - Default
   - TransparentFX

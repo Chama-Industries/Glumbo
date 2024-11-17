@@ -5,28 +5,57 @@ using UnityEngine.AI;
 
 public class Enemyscript : MonoBehaviour
 {
-    [SerializeField] List<Transform> Waypoint = new List<Transform>();
-    NavMeshAgent enemymove;
-    int waypointinedex = 0;
-    // Start is called before the first frame update
+    public GameObject player;
+    protected double distanceFromPlayer;
+    private NavMeshAgent enemy;
+
+    //variables related to the enemy attack
+    public GameObject bullet;
+    public Transform bulletOrigin;
+    private int wait = 0;
+    private bool hasFired = false;
+
     void Start()
     {
-        enemymove = GetComponent<NavMeshAgent>();
-        enemymove.SetDestination(Waypoint[0].position);
+        enemy = GetComponent<NavMeshAgent>();
+        distanceFromPlayer = Vector3.Distance(transform.position, player.transform.position);
     }
-    Vector3 nextmove()
-    {
-        waypointinedex++;
-        waypointinedex %= Waypoint.Count;
-        return Waypoint[waypointinedex].position;
 
-    }
-    // Update is called once per frame
     void Update()
     {
-        if (enemymove.remainingDistance <= enemymove.stoppingDistance)
+        distanceFromPlayer = Vector3.Distance(transform.position, player.transform.position);
+        if (distanceFromPlayer < 25.0f)
         {
-            enemymove.SetDestination(nextmove());
+            if (distanceFromPlayer < 10.0f && wait >= 100 && !hasFired)
+            {
+                shoot();
+            }
+            pursuit();
         }
+    }
+
+    void FixedUpdate()
+    {
+        if (wait == 100 && hasFired)
+        {
+            wait = 0;
+            hasFired = false;
+        }
+        else
+        {
+            wait++;
+        }
+    }
+
+    void shoot()
+    {
+        GameObject g = Instantiate(bullet, bulletOrigin.position, bulletOrigin.rotation);
+        hasFired = true;
+        Destroy(g, 4.0f);
+    }
+
+    void pursuit()
+    {
+        enemy.SetDestination(player.transform.position);
     }
 }
