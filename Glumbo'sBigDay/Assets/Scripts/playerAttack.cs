@@ -6,13 +6,21 @@ using UnityEngine;
 public class playerAttack : MonoBehaviour
 {
     private float speed;
+
+    // booleans to dictate projectile behavior, can be changed using Method Calls 
     private bool stopAttack = false;
+    private bool doesOrbit = false;
+
+    // Variables used to calcuate the distance between the Player and the Projectile
     private Vector3 initialPosition;
     private float differenceBetweenPositions;
+
     //rigidbody
     Rigidbody rb;
+
     //reference to allow us to know the location of the player without needing it assigned in the editor (see Start for the code)
     public GameObject player;
+
     // Timer to track lifetime, used if Destroy doesn't have a 2nd argument
     private float timer = 0f;
     void Start()
@@ -72,28 +80,39 @@ public class playerAttack : MonoBehaviour
     {
         //logic to see when the player's attack travels a certain distance
         differenceBetweenPositions = Vector3.Distance(transform.position, initialPosition);
-        if (differenceBetweenPositions > 5)
+        if (differenceBetweenPositions > 5 && !doesOrbit)
         {
             stopAttack = !stopAttack;
             //stops the projectile from moving
             rb.velocity = transform.forward * 0;
             initialPosition = transform.position;
         }
+        else if (doesOrbit)
+        {
+            orbitPlayer();
+        }
     }
 
-    public void orbitPlayer()
+    void orbitPlayer()
     {
         if (player != null)
         {
+            rb.velocity = transform.forward * 0;
             // Rotate around the player
-            transform.RotateAround(player.transform.position, Vector3.up, speed * Time.deltaTime);
+            transform.RotateAround(player.transform.position, Vector3.up, speed * 3.0f * Time.deltaTime);
         }
 
         // Increment timer and destroy after X seconds
         timer += Time.deltaTime;
-        if (timer >= 15.0f)
+        if (timer >= 5.0f)
         {
+            doesOrbit = false;
             Destroy(this.gameObject);
         }
+    }
+
+    public void activateOrbit()
+    {
+        doesOrbit = true;
     }
 }

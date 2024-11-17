@@ -1,49 +1,73 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
+using System.Diagnostics;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class jaxMovementScript : MonoBehaviour
 {
-    //controls the speed of the player
+    // Controls the speed of the player
     private float speed = 10f;
     private float rotateSpeed = 180f;
-    private Vector3 jumpPower = new Vector3(0, 8.75f, 0);
+    private Vector3 jumpPower = new Vector3(0, 10.0f, 0);
+    private Vector3 fallingPower = new Vector3(0, -0.4f, 0);
     private Vector3 tempDiagonalBoost = new Vector3(0, 7.5f, 0);
-    private Vector3 tempVerticalBoost = new Vector3(0, 12.5f, 0);
-    //rigidbody
-    Rigidbody rb;
-    //temporary variable to hold a reference to the player
+    private Vector3 tempVerticalBoost = new Vector3(0, 15.0f, 0);
+
+    // Rigidbody
+    private Rigidbody rb;
+
+    // Reference to the player (if this script is on the player, can be removed)
     public GameObject player;
-    //variable to reference a projectile for the player to use to attack
+
+    // Projectile prefab (GameObject component)
     public GameObject glumboAttack;
-    //int to give a cooldown so whatever action can't be spammed
+
+    // Cooldowns
     private int tempAttackCooldown;
     private int tempJumpCooldown;
-    //variable to reference where the projectile will come from
+
+    // Projectile spawn point
     public Transform attackOrigin;
-    //3D movement variable
+
+    // 3D movement variable
     Vector3 movementD;
-    //assignments for additional inputs, holds the keys we're using to give the player control
+
+    // Controls
     public KeyCode jump = KeyCode.Space;
     public KeyCode dance = KeyCode.Q;
-    //public KeyCode secondaryKey = KeyCode.E;
-    [Header("Projectile Orbit Settings")]
-    [Tooltip("Maximum number of orbiting projectiles allowed.")]
-    public int maxOrbitProjectiles = 1;
+    public KeyCode secondaryKey = KeyCode.E;
 
-    // List to keep track of active orbiting projectiles
-    private List<GameObject> activeOrbitProjectiles = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-        //assigns player speed
-        speed = 25;
-        //staple grab of a physics simulation component
+        // Assigns player speed
+        speed = 25f;
+        // Get Rigidbody component
         rb = GetComponent<Rigidbody>();
-        //relvenant keys that do things when pressed
+
+        // Ensure player reference is set
+        if (player == null)
+        {
+            player = this.gameObject; // If this script is on the player
+        }
+
+        // Ensure glumboAttack is assigned
+        if (glumboAttack == null)
+        {
+            UnityEngine.Debug.LogError("jaxMovementScript: glumboAttack not assigned in the Inspector.");
+        }
+
+        // Ensure attackOrigin is assigned
+        if (attackOrigin == null)
+        {
+            UnityEngine.Debug.LogError("jaxMovementScript: Attack Origin Transform not assigned in the Inspector.");
+        }
+
+        if (player == null)
+        {
+            UnityEngine.Debug.LogWarning("jaxMovementScript: Player GameObject not assigned.");
+        }
     }
 
     // Update is called once per frame
@@ -53,7 +77,7 @@ public class jaxMovementScript : MonoBehaviour
         advancedPlayerActions();
     }
 
-    //50 calls per seconds, helps with a little cooldown on jump and attacking (VERY TEMPORARY)
+    // FixedUpdate is called at fixed intervals
     void FixedUpdate()
     {
         tempAttackCooldown++;
@@ -61,19 +85,19 @@ public class jaxMovementScript : MonoBehaviour
         additionalPlayerActions();
     }
 
-    //has basic WASD controls for the player
+    // Basic WASD movement controls
     void playerMove()
     {
         float hIn = Input.GetAxis("Horizontal");
         float vIn = Input.GetAxis("Vertical");
 
-        //for some reason it was flipped (likely due to how i have the camera), so i had to toy with the variables 
+        // Adjusted movement direction based on camera or player orientation
         movementD = new Vector3(vIn, 0, -hIn);
         movementD.Normalize();
 
         transform.Translate(movementD * speed * Time.deltaTime, Space.World);
 
-        //makes the player rotate in the direciton of movement
+        // Rotate the player in the direction of movement
         if (movementD != Vector3.zero)
         {
             Quaternion rotationD = Quaternion.LookRotation(movementD, Vector3.up);
@@ -81,97 +105,80 @@ public class jaxMovementScript : MonoBehaviour
         }
     }
 
-    //includes additional controls, such as Jumping, Dancing, and a secondary Button for other actions
+    // Additional controls: Jumping, Dancing, and Secondary Actions
     void additionalPlayerActions()
     {
-        //very temporary code to allow the player to jump
-        if(Input.GetKey(jump) && tempJumpCooldown > 75)
+        // Jump
+        if (Input.GetKey(jump) && tempJumpCooldown > 50)
         {
             rb.AddForce(jumpPower, ForceMode.VelocityChange);
             tempJumpCooldown = 0;
         }
-        //temporary code to communicate that dance is working (would play an animation)
+
+        // Dance
         if (Input.GetKey(dance))
         {
             player.transform.Rotate(0.0f, 1.25f, 0.0f);
         }
-        //another key to use
-        /*if (Input.GetKey(secondaryInput))
+
+        // Fast Falling
+        if (Input.GetKey(secondaryKey))
         {
-            
-        }*/
-        //attacking input
-        if(Input.GetMouseButton(0) && tempAttackCooldown > 50)
+            rb.AddForce(fallingPower, ForceMode.VelocityChange);
+        } 
+
+        // Attack
+        if (Input.GetMouseButton(0) && tempAttackCooldown > 50)
         {
             Instantiate(glumboAttack, attackOrigin.position, attackOrigin.rotation);
             tempAttackCooldown = 0;
         }
     }
 
-    //combo moves by using multiple buttons at once, would have a cooldown but this is an alpha build
+    // Advanced player actions: Combo Moves
     void advancedPlayerActions()
     {
-        //gives the player a vertical & horizontal movement boost
-        if(Input.GetMouseButton(0) && Input.GetKey(jump) && tempJumpCooldown > 70)
+        // Diagonal Boost
+        if (Input.GetMouseButton(0) && Input.GetKey(jump) && tempJumpCooldown > 50)
         {
             rb.AddForce(tempDiagonalBoost, ForceMode.VelocityChange);
             tempJumpCooldown = 0;
         }
 
-        //gives the player a bigger jump
-        if(Input.GetKey(jump) && Input.GetKey(dance) && tempJumpCooldown > 70)
+        // Bigger Jump
+        if (Input.GetKey(jump) && Input.GetKey(dance) && tempJumpCooldown > 50)
         {
             rb.AddForce(tempVerticalBoost, ForceMode.VelocityChange);
             tempJumpCooldown = 0;
         }
 
-        //attacking input for orbit attack
-        if(Input.GetKey(dance) && Input.GetMouseButton(0) && tempAttackCooldown > 50)
+        // Orbit Attack
+        if (Input.GetKey(dance) && Input.GetMouseButton(0) && tempAttackCooldown > 50)
         {
-            if (activeOrbitProjectiles.Count < maxOrbitProjectiles){
-                SpawnOrbitProjectile();
-                tempAttackCooldown = 0;
-            }
+            SpawnOrbitProjectile();
+            tempAttackCooldown = 0;
         }
     }
 
+    
+
+    // Spawns an orbiting projectile
     void SpawnOrbitProjectile()
     {
-        if (glumboAttack == null)
-        {
-            Debug.LogWarning("jaxMovementScript: glumboAttack prefab not assigned.");
-            return;
-        }
-
-        if (attackOrigin == null)
-        {
-            Debug.LogWarning("jaxMovementScript: Attack Origin Transform not assigned.");
-            return;
-        }
-
-        if (player == null)
-        {
-            Debug.LogWarning("jaxMovementScript: Player GameObject not assigned.");
-            return;
-        }
-
-        //Quaternion.identity
         // Instantiate the orbiting projectile at the attackOrigin position
-        GameObject projectile = Instantiate(glumboAttack, attackOrigin.position, attackOrigin.rotation);
+        GameObject newProjectile = Instantiate(glumboAttack, attackOrigin.position, attackOrigin.rotation);
 
         // Get the script attached to the projectile
-        playerAttack orbitScript = projectile.GetComponent<playerAttack>();
+        playerAttack orbitScript = newProjectile.GetComponent<playerAttack>();
         if (orbitScript != null)
         {
             //method call to have the projectile rotate (broken)
-            orbitScript.orbitPlayer();
-            // Add to the active projectiles list
-            activeOrbitProjectiles.Add(projectile);
+            orbitScript.activateOrbit();
         }
         else
         {
-            Debug.LogError("jaxMovementScript: glumboAttack prefab does not have a playerAttack component.");
-            Destroy(projectile);
+            UnityEngine.Debug.LogError("jaxMovementScript: glumboAttack prefab does not have a playerAttack component.");
+            Destroy(newProjectile);
         }
     }
 }
