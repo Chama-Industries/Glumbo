@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using TMPro;
+using System.Threading;
+using System.Collections.Specialized;
 
 public class jaxMovementScript : MonoBehaviour
 {
     // Controls the speed of the player
-    private float speed = 10f;
+    private float speed = 2.0f;
     private float rotateSpeed = 180f;
     private Vector3 jumpPower = new Vector3(0, 10.0f, 0);
     private Vector3 fallingPower = new Vector3(0, -0.4f, 0);
@@ -104,7 +106,13 @@ public class jaxMovementScript : MonoBehaviour
         movementD = new Vector3(vIn, 0, -hIn);
         movementD.Normalize();
 
-        transform.Translate(movementD * speed * Time.deltaTime, Space.World);
+        rb.velocity += movementD * speed * Time.deltaTime;
+        if(rb.velocity.magnitude > 10)
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, 25.0f);
+        }
+
+        //transform.Translate(movementD * speed * Time.deltaTime, Space.World);
 
         // Rotate the player in the direction of movement
         if (movementD != Vector3.zero)
