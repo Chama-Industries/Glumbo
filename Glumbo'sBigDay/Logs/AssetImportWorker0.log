@@ -1,29 +1,29 @@
 Using pre-set license
 Built from '2023.2/staging' branch; Version is '2023.2.20f1 (0e25a174756c) revision 927137'; Using compiler version '193431935'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22631) 64bit Core' Language: 'en' Physical Memory: 7876 MB
+OS: 'Windows 11  (10.0.22631) 64bit Core' Language: 'en' Physical Memory: 16167 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity 2023.2.20f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2023.2.20f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/Diane/Glumbo-Project-2/Glumbo/Glumbo'sBigDay
+C:/Users/buzzi/Documents/Glumbo/Glumbo'sBigDay
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-65237
+52956
 -job-worker-count
-5
+7
 -background-job-worker-count
 8
 -asset-garbage-collectors
 1
-Successfully changed project path to: C:/Users/Diane/Glumbo-Project-2/Glumbo/Glumbo'sBigDay
-C:/Users/Diane/Glumbo-Project-2/Glumbo/Glumbo'sBigDay
+Successfully changed project path to: C:/Users/buzzi/Documents/Glumbo/Glumbo'sBigDay
+C:/Users/buzzi/Documents/Glumbo/Glumbo'sBigDay
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -58,168 +58,380 @@ C:/Users/Diane/Glumbo-Project-2/Glumbo/Glumbo'sBigDay
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [39124] Host "[IP] 10.10.1.69 [Port] 0 [Flags] 2 [Guid] 606379388 [EditorId] 606379388 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-S1OQHCD) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
-Player connection [39124] Host "[IP] 10.10.1.69 [Port] 0 [Flags] 2 [Guid] 606379388 [EditorId] 606379388 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-S1OQHCD) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
-JobSystem: Creating JobQueue using job-worker-count value 5
-[Physics::Module] Initialized MultithreadedJobDispatcher with 5 workers.
+Player connection [27136] Host "[IP] 10.78.139.254 [Port] 0 [Flags] 2 [Guid] 3180820137 [EditorId] 3180820137 [Version] 1048832 [Id] WindowsEditor(7,JaxtopLap) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [27136] Host "[IP] 10.78.139.254 [Port] 0 [Flags] 2 [Guid] 3180820137 [EditorId] 3180820137 [Version] 1048832 [Id] WindowsEditor(7,JaxtopLap) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+[Physics::Module] Initialized MultithreadedJobDispatcher with 7 workers.
 Library Redirect Path: Library/
-Refreshing native plugins compatible for Editor in 23.98 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.20 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2023.2.20f1 (0e25a174756c)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity 2023.2.20f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/Diane/Glumbo-Project-2/Glumbo/Glumbo'sBigDay/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2023.2.20f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/buzzi/Documents/Glumbo/Glumbo'sBigDay/Assets
 GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Intel(R) Iris(R) Xe Graphics (ID=0x46a8)
-    Vendor:   Intel
-    VRAM:     3938 MB
-    Driver:   31.0.101.5186
+    Renderer: NVIDIA GeForce RTX 3070 Laptop GPU (ID=0x24dd)
+    Vendor:   NVIDIA
+    VRAM:     8033 MB
+    Driver:   31.0.15.4630
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity 2023.2.20f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity 2023.2.20f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity 2023.2.20f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56296
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2023.2.20f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2023.2.20f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2023.2.20f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56280
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity 2023.2.20f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.015823 seconds.
-- Loaded All Assemblies, in  2.533 seconds
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2023.2.20f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002409 seconds.
+- Loaded All Assemblies, in  0.391 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.916 seconds
-Domain Reload Profiling: 4439ms
-	BeginReloadAssembly (890ms)
-		ExecutionOrderSort (1ms)
+- Finished resetting the current domain, in  0.282 seconds
+Domain Reload Profiling: 672ms
+	BeginReloadAssembly (122ms)
+		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (9ms)
-	RebuildCommonClasses (130ms)
-	RebuildNativeTypeToScriptingClass (40ms)
-	initialDomainReloadingComplete (441ms)
-	LoadAllAssembliesAndSetupDomain (1015ms)
-		LoadAssemblies (860ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (42ms)
+	LoadAllAssembliesAndSetupDomain (181ms)
+		LoadAssemblies (119ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (993ms)
-			TypeCache.Refresh (942ms)
-				TypeCache.ScanAssembly (864ms)
-			BuildScriptInfoCaches (3ms)
-			ResolveRequiredComponents (37ms)
-	FinalizeReload (1923ms)
+		AnalyzeDomain (179ms)
+			TypeCache.Refresh (177ms)
+				TypeCache.ScanAssembly (156ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (282ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1587ms)
+		SetupLoadedEditorAssemblies (242ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (41ms)
-			SetLoadedEditorAssemblies (15ms)
-			BeforeProcessingInitializeOnLoad (19ms)
-			ProcessInitializeOnLoadAttributes (1189ms)
-			ProcessInitializeOnLoadMethodAttributes (323ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (182ms)
+			ProcessInitializeOnLoadMethodAttributes (44ms)
 			AfterProcessingInitializeOnLoad (0ms)
-			EditorAssembliesLoaded (1ms)
+			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (0ms)
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\Diane\Glumbo-Project-2\Glumbo\Glumbo'sBigDay\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\Diane\Glumbo-Project-2\Glumbo\Glumbo'sBigDay\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in 14.003 seconds
-Refreshing native plugins compatible for Editor in 5.42 ms, found 3 plugins.
+Symbol file LoadedFromMemory doesn't match image C:\Users\buzzi\Documents\Glumbo\Glumbo'sBigDay\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\buzzi\Documents\Glumbo\Glumbo'sBigDay\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.777 seconds
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.361 seconds
-Domain Reload Profiling: 16267ms
-	BeginReloadAssembly (9488ms)
+- Finished resetting the current domain, in  0.499 seconds
+Domain Reload Profiling: 1273ms
+	BeginReloadAssembly (360ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (35ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (330ms)
-	RebuildCommonClasses (162ms)
-	RebuildNativeTypeToScriptingClass (55ms)
-	initialDomainReloadingComplete (237ms)
-	LoadAllAssembliesAndSetupDomain (3964ms)
-		LoadAssemblies (2953ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (35ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (333ms)
+		LoadAssemblies (279ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (2211ms)
-			TypeCache.Refresh (1399ms)
-				TypeCache.ScanAssembly (1241ms)
-			BuildScriptInfoCaches (773ms)
-			ResolveRequiredComponents (25ms)
-	FinalizeReload (2361ms)
+		AnalyzeDomain (148ms)
+			TypeCache.Refresh (126ms)
+				TypeCache.ScanAssembly (113ms)
+			BuildScriptInfoCaches (17ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (499ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1541ms)
+		SetupLoadedEditorAssemblies (331ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
-			SetLoadedEditorAssemblies (11ms)
-			BeforeProcessingInitializeOnLoad (208ms)
-			ProcessInitializeOnLoadAttributes (1249ms)
-			ProcessInitializeOnLoadMethodAttributes (44ms)
-			AfterProcessingInitializeOnLoad (22ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (32ms)
+			ProcessInitializeOnLoadAttributes (270ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (4ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (33ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 3.07 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 0.63 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 23 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 3220 unused Assets / (0.6 MB). Loaded Objects now: 3828.
-Memory consumption went from 116.6 MB to 116.0 MB.
-Total: 20.285100 ms (FindLiveObjects: 1.513100 ms CreateObjectMapping: 0.686900 ms MarkObjects: 14.996600 ms  DeleteObjects: 2.801300 ms)
+Unloading 3220 unused Assets / (1.1 MB). Loaded Objects now: 3828.
+Memory consumption went from 116.6 MB to 115.5 MB.
+Total: 6.952400 ms (FindLiveObjects: 0.391000 ms CreateObjectMapping: 0.303800 ms MarkObjects: 5.212700 ms  DeleteObjects: 1.043900 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 352817.912205 seconds.
+  Time since last request: 539737.963550 seconds.
   path: Assets/New Terrain.asset
   artifactKey: Guid(b3c1a41493e0a80459a0661374c40a19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Terrain.asset using Guid(b3c1a41493e0a80459a0661374c40a19) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8c187351092ca491a9adb51f6128b375') in 0.336795 seconds
+Start importing Assets/New Terrain.asset using Guid(b3c1a41493e0a80459a0661374c40a19) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '269f0c47c4482d7102b61605a7eb7f7e') in 0.0794972 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1253.479930 seconds.
-  path: Assets/New Terrain 1.asset
-  artifactKey: Guid(9fd024a065ca9f842902c2cd02c54261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Terrain 1.asset using Guid(9fd024a065ca9f842902c2cd02c54261) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'acd8f5e089361a3cbdf79445773c66e9') in 0.2416072 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 21.050981 seconds.
+  path: Assets/Prefabs/basicEnemy.prefab
+  artifactKey: Guid(813dbf0f6ec412242968f405155cdea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/basicEnemy.prefab using Guid(813dbf0f6ec412242968f405155cdea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8a27672466615bfbb823f85eda7ab509') in 0.0609825 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 249
 
 ========================================================================
 Received Import Request.
-  Time since last request: 416.866410 seconds.
-  path: Assets/Materials (Textures)
-  artifactKey: Guid(5287316af4129234a9d9aa326f639428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials (Textures) using Guid(5287316af4129234a9d9aa326f639428) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5b8d1ce61fe26d50a6b084b5f04673ed') in 0.0299813 seconds
+  Time since last request: 0.000018 seconds.
+  path: Assets/Prefabs/theFist.prefab
+  artifactKey: Guid(83819c752914cce4481c782578b13db7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/theFist.prefab using Guid(83819c752914cce4481c782578b13db7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '090045c88da56012097bda09a99bcffd') in 0.0113728 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 81
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Prefabs/glumbo.prefab
+  artifactKey: Guid(fb557bee45e608847b555ae08bf1c7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/glumbo.prefab using Guid(fb557bee45e608847b555ae08bf1c7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2e37b4c2ef818f918b7c92e78a885745') in 0.0129301 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 144
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.850156 seconds.
+  path: Assets/Prefabs/worldObstacles
+  artifactKey: Guid(806bd7f0d5b23404fb227bca0c5363be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles using Guid(806bd7f0d5b23404fb227bca0c5363be) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ce9e229635b8d3cd55ee78db3932901e') in 0.000554 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.159562 seconds.
+  Time since last request: 0.035523 seconds.
+  path: Assets/Prefabs/worldObstacles/gnomeShrine.prefab
+  artifactKey: Guid(90b1715c65258a840816b2f42d4ba02c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/gnomeShrine.prefab using Guid(90b1715c65258a840816b2f42d4ba02c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a313cf69b0986d1a13a95fc20268cb7f') in 0.0120102 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 32
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Prefabs/worldObstacles/tempGrassyPlatform.prefab
+  artifactKey: Guid(a9fe4735dba1c2f4b8bc3c7133dd9dbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/tempGrassyPlatform.prefab using Guid(a9fe4735dba1c2f4b8bc3c7133dd9dbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1403eee2575b04c3cf901df36c4896d4') in 0.0098044 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.090337 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '37d96d3cafd323d63262fd1caba6402a') in 0.0132389 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.205346 seconds.
+  path: Assets/Prefabs/worldObstacles/longPlatform.prefab
+  artifactKey: Guid(a6c1fdf3b7ad6b8488c2e0cb97238a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/longPlatform.prefab using Guid(a6c1fdf3b7ad6b8488c2e0cb97238a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '875a12de98cc522a090590192fa8d4c4') in 0.0124167 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.694398 seconds.
+  path: Assets/Prefabs/worldObstacles/longPlatform.prefab
+  artifactKey: Guid(a6c1fdf3b7ad6b8488c2e0cb97238a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/longPlatform.prefab using Guid(a6c1fdf3b7ad6b8488c2e0cb97238a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f9b4017a7d0ff632351da953bf0a6822') in 0.0053949 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.394207 seconds.
+  path: Assets/Prefabs/worldObstacles/longPlatform.prefab
+  artifactKey: Guid(a6c1fdf3b7ad6b8488c2e0cb97238a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/longPlatform.prefab using Guid(a6c1fdf3b7ad6b8488c2e0cb97238a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '801c5ff7a86088a3428620c9130ed583') in 0.0052974 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.607481 seconds.
+  path: Assets/Prefabs/worldObstacles/longPlatform.prefab
+  artifactKey: Guid(a6c1fdf3b7ad6b8488c2e0cb97238a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/longPlatform.prefab using Guid(a6c1fdf3b7ad6b8488c2e0cb97238a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '443375eb70d816fcaf1f16ef67750f32') in 0.006512 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.035886 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '62ccf691b66975992597438b219a1a43') in 0.0060398 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.389724 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dda669d4ecd3024f83bb70c2b2c59aef') in 0.0089629 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.989587 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a8695d446df38e87453d14fcb00cc438') in 0.0116137 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.643274 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '18c44f1f417681304b56fa61ca8f465b') in 0.0119694 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.198140 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '47f4264eec5fa46468588f0b2dd894fc') in 0.0139032 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.802911 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '340de333a9c93b6d2485c3ec415d86be') in 0.0107258 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.402983 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '94dfb493ca3f1dea3bbcb8470e73b78e') in 0.010572 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.001198 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5e24ffc30895b5eddce886154d05a7b7') in 0.0109825 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.451594 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '14080cb6c80aac4437ec29735caf6fb8') in 0.0209295 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.372904 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '30a7f0bea74df040473fff493d45caf0') in 0.0108132 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.816208 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9bb5e00ed9ecd7b5abe5d0f22683fabc') in 0.010833 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.684820 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7973df7b93c6acf7ec0467f5b195a3f0') in 0.0054492 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.220016 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b21d52ce3deb5338f4f8bbf6187af3d6') in 0.0127678 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.275632 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e04c3bfa9abb80c48875a95a602f6b55') in 0.0170584 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.598060 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bb0fa69926b127ac4672da2134f9a156') in 0.0112525 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.246324 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c956656d310424ef0cb89acfd148ec43') in 0.0154132 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.799042 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0de67564875f5c14dca8f66b8165cba4') in 0.0157732 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.633195 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9ffa4dda5006aef5e9e5451a95c4799e') in 0.0717715 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.353889 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7e3b81a1088618972c074e9312beb4bd') in 0.0139021 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.388644 seconds.
+  path: Assets/Prefabs/worldObstacles/Climbablewall.prefab
+  artifactKey: Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/worldObstacles/Climbablewall.prefab using Guid(330c09b6336c81241aca6064ae4b50d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '14ba2757f146ba102b1cc21016241db3') in 0.0053553 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.464644 seconds.
   path: Assets/Materials (Textures)/limbMaterial.mat
   artifactKey: Guid(bd852d096e28cfa41ae834d2052de0f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials (Textures)/limbMaterial.mat using Guid(bd852d096e28cfa41ae834d2052de0f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a308e72231103cacf73c0c0ddbd91761') in 2.6097482 seconds
+Start importing Assets/Materials (Textures)/limbMaterial.mat using Guid(bd852d096e28cfa41ae834d2052de0f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e5627fc976c6e811632ec744269aa6b0') in 0.0329493 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000075 seconds.
-  path: Assets/Materials (Textures)/tempWood.mat
-  artifactKey: Guid(a9b7ea567bb572b44bf2c6535ca5979c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials (Textures)/tempWood.mat using Guid(a9b7ea567bb572b44bf2c6535ca5979c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fd8e85ba47c624c9943591550c9d7da5') in 0.0521057 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000090 seconds.
-  path: Assets/Materials (Textures)/tempGrass.mat
-  artifactKey: Guid(f64cbb5421d68004da9265329857bd18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials (Textures)/tempGrass.mat using Guid(f64cbb5421d68004da9265329857bd18) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cad1f23809de9f5af416b75ba344ba2f') in 0.0460874 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
