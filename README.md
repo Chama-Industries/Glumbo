@@ -1,4 +1,4 @@
-# Glumbo
+# Glumbo's Big Day
 Game Concept Developed for a College Course.
 
 Controls: 
